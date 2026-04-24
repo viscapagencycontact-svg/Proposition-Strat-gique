@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grandiose Paris — Stratégie Instagram</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --black: #0A0A0A;
+    --gold: #C9A96E;
+    --dark: #111111;
+    --muted: #6B6B6B;
+    --red: #8B1A1A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(160deg, #0A0A0A 60%, #1a1008 100%);
+    text-align: center;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(201,169,110,0.08) 0%, transparent 70%);
+  }
+
+  .cover-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0.8;
+  }
+
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 100px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--cream);
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 20px;
+  }
+
+  .cover-line {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    margin: 48px auto 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  .cover-meta {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    gap: 60px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .cover-meta span { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .cover-meta strong { font-size: 20px; font-family: 'Cormorant Garamond', serif; color: var(--cream); font-weight: 300; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 60px; max-width: 1400px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,169,110,0.2); }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 600px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.3), transparent);
+    margin: 0 60px;
+    max-width: calc(1400px - 120px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ─── IDENTITY BLOCK ─── */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 60px;
+    background: rgba(201,169,110,0.1);
+  }
+
+  .identity-cell {
+    background: #111;
+    padding: 48px 40px;
+  }
+
+  .identity-cell h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+
+  .identity-cell p {
+    font-size: 12px;
+    line-height: 2;
+    color: #888;
+  }
+
+  .identity-cell.dark { background: #0d0d0d; }
+
+  /* ─── PILLARS ─── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: rgba(201,169,110,0.08);
+  }
+
+  .pillar {
+    background: #111;
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .pillar:hover { background: #161610; }
+
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(201,169,110,0.08);
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    line-height: 1;
+  }
+
+  .pillar-icon {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .pillar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    color: var(--cream);
+  }
+
+  .pillar p {
+    font-size: 11px;
+    line-height: 2;
+    color: #777;
+  }
+
+  .pillar-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-top: 1px solid rgba(201,169,110,0.3);
+    padding-top: 12px;
+  }
+
+  /* ─── INSTAGRAM FEED MOCK ─── */
+  .ig-container {
+    margin-top: 60px;
+  }
+
+  .ig-profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 32px;
+  }
+
+  .ig-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #8B6914);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .ig-profile-info h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .ig-profile-info p {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .ig-stats {
+    margin-left: auto;
+    display: flex;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .ig-stats span { display: flex; flex-direction: column; gap: 4px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .ig-stats strong { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); }
+
+  /* ─── FEED GRID ─── */
+  .theme-block {
+    margin-bottom: 80px;
+  }
+
+  .theme-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .theme-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+  }
+
+  .theme-header p {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .feed-item {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+    cursor: pointer;
+  }
+
+  .feed-item img, .feed-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: brightness(0.92);
+  }
+
+  .feed-item:hover img, .feed-item:hover video { transform: scale(1.05); filter: brightness(1); }
+
+  .feed-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+
+  .feed-item:hover .feed-overlay { opacity: 1; }
+
+  .feed-caption {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+  }
+
+  .feed-type {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .feed-item.video-item::before {
+    content: '▶';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    color: white;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-left: 2px;
+  }
+
+  /* Video thumbnails */
+  .feed-item.video-item {
+    background: #111;
+  }
+
+  .video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: brightness(0.85);
+  }
+
+  .feed-item.video-item:hover .video-thumb { transform: scale(1.05); filter: brightness(1); }
+
+  /* ─── CAPTION STRATEGY ─── */
+  .caption-strategy {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: rgba(201,169,110,0.08);
+  }
+
+  .caption-card {
+    background: #111;
+    padding: 40px;
+  }
+
+  .caption-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .caption-card .example {
+    font-size: 12px;
+    line-height: 2;
+    color: #777;
+    font-style: italic;
+    border-left: 2px solid rgba(201,169,110,0.3);
+    padding-left: 16px;
+    margin-top: 12px;
+  }
+
+  /* ─── CALENDAR ─── */
+  .calendar {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    background: rgba(201,169,110,0.06);
+  }
+
+  .cal-header {
+    background: rgba(201,169,110,0.15);
+    padding: 12px;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .cal-day {
+    background: #111;
+    padding: 16px 12px;
+    min-height: 80px;
+    position: relative;
+  }
+
+  .cal-day-num {
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .cal-post {
+    font-size: 9px;
+    line-height: 1.5;
+    color: var(--cream);
+    background: rgba(201,169,110,0.08);
+    border-left: 2px solid var(--gold);
+    padding: 4px 6px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .cal-day.empty { background: #0d0d0d; }
+
+  /* ─── HASHTAG ─── */
+  .hashtag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .hashtag {
+    border: 1px solid rgba(201,169,110,0.2);
+    padding: 6px 14px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .hashtag:hover { border-color: var(--gold); color: var(--gold); }
+  .hashtag.primary { border-color: rgba(201,169,110,0.5); color: var(--cream); }
+
+  /* ─── KPIs ─── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: rgba(201,169,110,0.08);
+  }
+
+  .kpi-cell {
+    background: #111;
+    padding: 48px 32px;
+    text-align: center;
+  }
+
+  .kpi-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    display: block;
+  }
+
+  .kpi-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #060606;
+    border-top: 1px solid rgba(201,169,110,0.1);
+    padding: 60px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .footer-sub {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px auto;
+    opacity: 0.4;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: #444;
+    letter-spacing: 1px;
+  }
+
+  /* page break effect */
+  .full-break {
+    background: rgba(201,169,110,0.03);
+    padding: 80px 60px;
+  }
+
+  .full-break-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Reel mockup */
+  .reel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin-top: 40px;
+  }
+
+  .reel-item {
+    aspect-ratio: 9/16;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    display: block;
+  }
+
+  .reel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+
+  .reel-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .reel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  /* scroll indicator */
+  .scroll-hint {
+    text-align: center;
+    padding: 32px;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<div class="cover">
+  <div class="cover-label">Proposition Stratégique · Instagram</div>
+  <h1><em>Grandiose</em><br>Paris</h1>
+  <div class="cover-sub">Charcuterie de Haute Gastronomie</div>
+  <div class="cover-line"></div>
+  <div class="cover-meta">
+    <span><strong>3</strong>Thèmes<br>Éditoriaux</span>
+    <span><strong>9+</strong>Posts<br>par Thème</span>
+    <span><strong>5</strong>Reels<br>Proposés</span>
+    <span><strong>30</strong>Jours<br>Calendrier</span>
+  </div>
+</div>
+
+<div class="scroll-hint">↓ Défiler pour découvrir</div>
+
+<!-- ═══════════════════ IDENTITÉ DE MARQUE ═══════════════════ -->
+<section>
+  <div class="section-label">01 — Identité</div>
+  <h2 class="section-title">Le Positionnement<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)">Grandiose</em></h2>
+  <p class="section-desc">Une charcuterie de bœuf premium, Halal, née à Paris. Entre artisanat d'exception et gastronomie moderne. L'instagram doit refléter ce raffinement sans compromis.</p>
+
+  <div class="identity-grid">
+    <div class="identity-cell">
+      <h3>Ton de voix</h3>
+      <p>Élégant sans être distant. Émotionnel sans être ostentatoire. Chaque post doit résonner comme une invitation à une expérience, pas une vente.</p>
+    </div>
+    <div class="identity-cell dark">
+      <h3>Esthétique visuelle</h3>
+      <p>Noir profond, crème, or. Lumière chiaroscuro. Plans rapprochés sur la texture de la viande. Plating étoilé. Références aux maisons de luxe parisiennes.</p>
+    </div>
+    <div class="identity-cell dark">
+      <h3>Cible</h3>
+      <p>Gastronomes urbains 28–45 ans. Communauté Halal premium. Amateurs de charcuterie fine. Clientèle sensible au made in France et à l'affinage.</p>
+    </div>
+    <div class="identity-cell">
+      <h3>Différenciation</h3>
+      <p>Premier acteur du luxe en charcuterie de bœuf Halal en France. Affinage jusqu'à 16 mois. Black Angus, Wagyu, IGP — des origines d'exception.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ 3 PILIERS ═══════════════════ -->
+<section>
+  <div class="section-label">02 — Architecture Éditoriale</div>
+  <h2 class="section-title">3 Piliers<br>de Contenu</h2>
+  <p class="section-desc">Chaque thème a son univers visuel, son ton, son rythme de publication. Ensemble ils créent un feed cohérent et désirable.</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">I</div>
+      <div class="pillar-icon">🥩</div>
+      <h3>L'Art du Produit</h3>
+      <p>La viande comme matière première d'excellence. Gros plans textures, processus d'affinage, plating gastronomique. Émotion sensorielle pure.</p>
+      <div class="pillar-tag">Product · Close-up · Artisanat</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">II</div>
+      <div class="pillar-icon">🥐</div>
+      <h3>Art de Vivre Parisien</h3>
+      <p>Le lifestyle qui entoure le produit. Paris, ses cafés, ses maisons de luxe, ses marchés. Grandiose s'inscrit dans un art de vivre, pas juste dans une assiette.</p>
+      <div class="pillar-tag">Lifestyle · Paris · Luxury</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">III</div>
+      <div class="pillar-icon">✨</div>
+      <h3>L'Expérience & Le Service</h3>
+      <p>Room service, table dressée, gestes d'élégance. Grandiose n'est pas une épicerie — c'est un rituel. Un cadeau. Une attention extraordinaire.</p>
+      <div class="pillar-tag">Expérience · Ritual · Gift</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ FEED THÈME 1 ═══════════════════ -->
+<div class="full-break">
+  <div class="full-break-inner">
+    <div class="section-label">03 — Feed Instagram · Thème I</div>
+    <div class="theme-block">
+      <div class="theme-header">
+        <div>
+          <h3>🥩 L'Art du Produit</h3>
+          <p style="font-size:11px;color:#666;margin-top:4px;letter-spacing:1px">Viande · Texture · Gastronomie · Plating</p>
+        </div>
+        <p>3 posts / semaine</p>
+      </div>
+
+      <div class="feed-grid">
+        <!-- Row 1 -->
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/c985faf22293c5bfd901d84cf8ade724.jpg" alt="Filet Mignon Steak">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Le Filet Mignon.<br>Seared. Medium Rare. Art of Taste.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/387aaeac84eb118a8db03ec38ea9dcb2.jpg" alt="Carpaccio Madre">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Carpaccio de bœuf.<br>Tenu dans les mains, servi avec âme.</div>
+          </div>
+        </div>
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline poster="">
+            <source src="https://cdn.shopify.com/videos/c/o/v/ff72362d62654a928a4ba3ae34be9c5e.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">Le geste de l'affinage.</div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/ecb1b1c252c56218f461365f20a1a341.jpg" alt="Sashimi style fish">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">La sauce versée à la seconde.<br>Précision de chef.</div>
+          </div>
+        </div>
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/534dafd1e8e44b0489881ee2dc55a3b8.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">La tranche parfaite.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/b78a605072699b1631f10952db7705da.jpg" alt="Maison du Baiser">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Gants blancs, plateau argenté.<br>L'élégance dans chaque geste.</div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/993f20a1329c4e899177eb8aeb441689.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">La découpe, l'art de la main.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/457ecd1a2c7ba886eae2c2c897ca3f9f.jpg" alt="Jamón sharing">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Many Hands. Sin Reglas.<br>Le partage comme art de vivre.</div>
+          </div>
+        </div>
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/a554d6c693a54e0f865928bbb65a4641.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">De la matière à l'excellence.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FEED THÈME 2 ═══════════════════ -->
+<div style="background:#0d0d0d;padding:80px 0;">
+  <div style="max-width:1400px;margin:0 auto;padding:0 60px;">
+    <div class="section-label">04 — Feed Instagram · Thème II</div>
+    <div class="theme-block">
+      <div class="theme-header">
+        <div>
+          <h3>🥐 Art de Vivre Parisien</h3>
+          <p style="font-size:11px;color:#666;margin-top:4px;letter-spacing:1px">Paris · Luxury · Culture · Lifestyle</p>
+        </div>
+        <p>2 posts / semaine</p>
+      </div>
+
+      <div class="feed-grid">
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/41fe75f51a5c050d0cd69cd2a9905185.jpg" alt="Café de l'Epoque">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Paris, 1826.<br>Certaines adresses ne changent jamais.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/472e23aff706782d76f5d3b1424eedaf.jpg" alt="Café de Flore">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Café de Flore. Le rituel.<br>Grandiose s'y glisse naturellement.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/984b56f9f8e86ab2bd6d143344a4e8a7.jpg" alt="La Seine">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">La Seine, le vin, le pain.<br>Paris dans son essence.</div>
+          </div>
+        </div>
+
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/4dfade5493370020dcd743b85775ffa2.jpg" alt="Cartier bags">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Certains sacs valent le détour.<br>Grandiose aussi.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/48abeaac5d825876d0e1fd2012bbc857.jpg" alt="YSL bag">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Saint Laurent. L'exigence du détail.<br>Notre philosophie aussi.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/DSC05428.jpg" alt="Grandiose product">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Produit</div>
+            <div class="feed-caption">Notre signature.<br>Charcuterie d'exception, Paris.</div>
+          </div>
+        </div>
+
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/3233e87619893fac4c4c4a06da67c5f9.jpg" alt="La Terrasse croissants">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Le matin parisien.<br>Croissant. Café. Et peut-être Grandiose.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/04002ffacb17e614d219c501415b9234.jpg" alt="Grandiose bag">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Branding</div>
+            <div class="feed-caption">Grandiose Paris.<br>Un nom. Une promesse.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/4e439763645c4d595f0e3bc4c9553149.jpg" alt="Chess Maztermind">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Art</div>
+            <div class="feed-caption">Le jeu des experts.<br>Nous jouons aussi le nôtre.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FEED THÈME 3 ═══════════════════ -->
+<div class="full-break">
+  <div class="full-break-inner">
+    <div class="section-label">05 — Feed Instagram · Thème III</div>
+    <div class="theme-block">
+      <div class="theme-header">
+        <div>
+          <h3>✨ L'Expérience & Le Service</h3>
+          <p style="font-size:11px;color:#666;margin-top:4px;letter-spacing:1px">Hotel · Gift · Room Service · Rituel</p>
+        </div>
+        <p>2 posts / semaine</p>
+      </div>
+
+      <div class="feed-grid">
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/113c578c6d8728a3d4f105bbd554f227.jpg" alt="Room service waiter">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Le frapper à la porte.<br>Le moment avant le festin.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/57c1681188a4c9f51ad511c6c15c7291.jpg" alt="Breakfast in bed">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Room service & Financial Times.<br>Le luxe du matin.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/78c47fb415d032fb93675535e8b30cf5.jpg" alt="Hotel elevator croissant">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Croissant. Journal. Étage 6.<br>Les rituels font les grands matins.</div>
+          </div>
+        </div>
+
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/ab3f8bb0eb8356fc13058f66ab430c71.jpg" alt="RKN by Rikan silver tray">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Soulever le cloche.<br>C'est dévoiler une promesse.</div>
+          </div>
+        </div>
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/d4609d627d4d474f808cae952c305787.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">L'unboxing Grandiose.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/67881e393eb072e22c076efaa5548646.jpg" alt="Oysters stairs waiter">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Photo</div>
+            <div class="feed-caption">Le serveur descend les marches.<br>La promesse monte vers vous.</div>
+          </div>
+        </div>
+
+        <div class="feed-item video-item">
+          <video class="video-thumb" autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/f3a672f65db64e42965f266aa51fb7ed.mp4" type="video/mp4">
+          </video>
+          <div class="feed-overlay">
+            <div class="feed-type">Reel · Vidéo</div>
+            <div class="feed-caption">Grandiose en mouvement.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/DSC01ju858.png" alt="Grandiose product shot">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Produit</div>
+            <div class="feed-caption">La charcuterie premium<br>livrée chez vous.</div>
+          </div>
+        </div>
+        <div class="feed-item">
+          <img src="/mnt/user-data/uploads/472e23aff706782d76f5d3b1424eedaf.jpg" alt="creative food">
+          <div class="feed-overlay">
+            <div class="feed-type">Post · Art</div>
+            <div class="feed-caption">L'art, même dans le pain.<br>La créativité, notre ADN.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CALENDRIER ═══════════════════ -->
+<section>
+  <div class="section-label">06 — Planning</div>
+  <h2 class="section-title">Calendrier<br>30 Jours</h2>
+  <p class="section-desc">7 posts par semaine. Mix équilibré entre les 3 thèmes. Reels prioritaires en début de semaine pour l'algorithme.</p>
+
+  <div class="calendar">
+    <div class="cal-header">Lun</div>
+    <div class="cal-header">Mar</div>
+    <div class="cal-header">Mer</div>
+    <div class="cal-header">Jeu</div>
+    <div class="cal-header">Ven</div>
+    <div class="cal-header">Sam</div>
+    <div class="cal-header">Dim</div>
+
+    <!-- Week 1 -->
+    <div class="cal-day"><div class="cal-day-num">1</div><div class="cal-post">🎬 Reel<br>Affinage Produit</div></div>
+    <div class="cal-day"><div class="cal-day-num">2</div><div class="cal-post">📸 Plating<br>Filet Mignon</div></div>
+    <div class="cal-day"><div class="cal-day-num">3</div><div class="cal-post">📸 Lifestyle<br>Café de Flore</div></div>
+    <div class="cal-day"><div class="cal-day-num">4</div><div class="cal-post">🎬 Reel<br>La Tranche</div></div>
+    <div class="cal-day"><div class="cal-day-num">5</div><div class="cal-post">📸 Produit<br>Bresaola IGP</div></div>
+    <div class="cal-day"><div class="cal-day-num">6</div><div class="cal-post">📸 Paris<br>La Seine</div></div>
+    <div class="cal-day"><div class="cal-day-num">7</div><div class="cal-post">📸 Service<br>Room Service</div></div>
+
+    <!-- Week 2 -->
+    <div class="cal-day"><div class="cal-day-num">8</div><div class="cal-post">🎬 Reel<br>Unboxing</div></div>
+    <div class="cal-day"><div class="cal-day-num">9</div><div class="cal-post">📸 Textures<br>Wagyu Close-up</div></div>
+    <div class="cal-day"><div class="cal-day-num">10</div><div class="cal-post">📸 Lifestyle<br>Cartier Bags</div></div>
+    <div class="cal-day"><div class="cal-day-num">11</div><div class="cal-post">📸 Produit<br>Saucisson Pistache</div></div>
+    <div class="cal-day"><div class="cal-day-num">12</div><div class="cal-post">🎬 Reel<br>Chef Gesture</div></div>
+    <div class="cal-day"><div class="cal-day-num">13</div><div class="cal-post">📸 Service<br>La Cloche</div></div>
+    <div class="cal-day"><div class="cal-day-num">14</div><div class="cal-post">📸 Paris<br>L'Époque 1826</div></div>
+
+    <!-- Week 3 -->
+    <div class="cal-day"><div class="cal-day-num">15</div><div class="cal-post">🎬 Reel<br>Sauce Coulée</div></div>
+    <div class="cal-day"><div class="cal-day-num">16</div><div class="cal-post">📸 Plating<br>Carpaccio</div></div>
+    <div class="cal-day"><div class="cal-day-num">17</div><div class="cal-post">📸 Lifestyle<br>YSL Street</div></div>
+    <div class="cal-day"><div class="cal-day-num">18</div><div class="cal-post">📸 Produit<br>Black Angus 80g</div></div>
+    <div class="cal-day"><div class="cal-day-num">19</div><div class="cal-post">🎬 Reel<br>Brand Story</div></div>
+    <div class="cal-day"><div class="cal-day-num">20</div><div class="cal-post">📸 Service<br>Huîtres Escalier</div></div>
+    <div class="cal-day"><div class="cal-day-num">21</div><div class="cal-post">📸 Art<br>Pain Palette</div></div>
+
+    <!-- Week 4 -->
+    <div class="cal-day"><div class="cal-day-num">22</div><div class="cal-post">🎬 Reel<br>Partage Table</div></div>
+    <div class="cal-day"><div class="cal-day-num">23</div><div class="cal-post">📸 Produit<br>Jambon d'Agneau</div></div>
+    <div class="cal-day"><div class="cal-day-num">24</div><div class="cal-post">📸 Paris<br>Grandiose Bag</div></div>
+    <div class="cal-day"><div class="cal-day-num">25</div><div class="cal-post">📸 Service<br>Morning Hotel</div></div>
+    <div class="cal-day"><div class="cal-day-num">26</div><div class="cal-post">🎬 Reel<br>Affinage 12 mois</div></div>
+    <div class="cal-day"><div class="cal-day-num">27</div><div class="cal-post">📸 Lifestyle<br>Chess Strategy</div></div>
+    <div class="cal-day"><div class="cal-day-num">28</div><div class="cal-post">📸 Plating<br>Maison du Baiser</div></div>
+
+    <!-- Week 5 partial -->
+    <div class="cal-day"><div class="cal-day-num">29</div><div class="cal-post">🎬 Reel<br>Best of Mois</div></div>
+    <div class="cal-day"><div class="cal-day-num">30</div><div class="cal-post">📸 Produit<br>Coffret Cadeau</div></div>
+    <div class="cal-day empty"></div>
+    <div class="cal-day empty"></div>
+    <div class="cal-day empty"></div>
+    <div class="cal-day empty"></div>
+    <div class="cal-day empty"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ CAPTIONS ═══════════════════ -->
+<section>
+  <div class="section-label">07 — Copywriting</div>
+  <h2 class="section-title">Exemples<br>de Captions</h2>
+
+  <div class="caption-strategy">
+    <div class="caption-card">
+      <h4>🥩 Post Produit</h4>
+      <div class="example">
+        "Douze mois d'attente pour une seule tranche.<br>
+        Le Suprême de Wagyu ne se précipite pas — il se mérite.<br><br>
+        Disponible en édition limitée sur grandioseparis.com<br><br>
+        #GrandioseParis #Wagyu #CharcuterieHalal #LuxureFood"
+      </div>
+    </div>
+    <div class="caption-card">
+      <h4>🌆 Post Lifestyle</h4>
+      <div class="example">
+        "Paris ne se visite pas — il se vit.<br>
+        Entre deux boutiques, une bouchée de Grandiose.<br>
+        Parce que l'exigence ne s'arrête pas à la mode.<br><br>
+        #Paris #ArtDeVivre #GrandioseParis"
+      </div>
+    </div>
+    <div class="caption-card">
+      <h4>🎬 Reel Hook</h4>
+      <div class="example">
+        "La charcuterie que tu pensais ne jamais pouvoir manger…<br>
+        Elle existe. Elle est Halal. Elle est Parisienne.<br>
+        Et elle s'appelle Grandiose."
+      </div>
+    </div>
+    <div class="caption-card">
+      <h4>✨ Post Expérience</h4>
+      <div class="example">
+        "On ne livre pas un colis.<br>
+        On livre une expérience.<br>
+        Emballage premium, tranche fine, moment suspendu.<br><br>
+        Offrez Grandiose. Offrez l'essentiel."
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ HASHTAGS ═══════════════════ -->
+<section>
+  <div class="section-label">08 — Hashtags</div>
+  <h2 class="section-title">Stratégie<br>Hashtags</h2>
+  <p class="section-desc">Mix entre hashtags de niche (fort engagement) et hashtags larges (découverabilité). Max 12 par post pour éviter le spam.</p>
+
+  <div class="hashtag-grid">
+    <span class="hashtag primary">#GrandioseParis</span>
+    <span class="hashtag primary">#CharcuterieHalal</span>
+    <span class="hashtag primary">#BoeufAffiné</span>
+    <span class="hashtag primary">#LuxuryHalal</span>
+    <span class="hashtag">#CharcuterieDeBoeuf</span>
+    <span class="hashtag">#WagyuParis</span>
+    <span class="hashtag">#BlackAngus</span>
+    <span class="hashtag">#GastronomieHalal</span>
+    <span class="hashtag">#ArtisanatFrançais</span>
+    <span class="hashtag">#MadeInParis</span>
+    <span class="hashtag">#FoodLuxury</span>
+    <span class="hashtag">#ParisFoodie</span>
+    <span class="hashtag">#HalalGourmet</span>
+    <span class="hashtag">#AffineEnFrance</span>
+    <span class="hashtag">#GastronomieParisienne</span>
+    <span class="hashtag">#CharcuterieFine</span>
+    <span class="hashtag">#Bresaola</span>
+    <span class="hashtag">#FoodPhotography</span>
+    <span class="hashtag">#LuxeFrançais</span>
+    <span class="hashtag">#ParisFood</span>
+    <span class="hashtag">#HalalFood</span>
+    <span class="hashtag">#CoffretCadeau</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ KPIs ═══════════════════ -->
+<section>
+  <div class="section-label">09 — Objectifs</div>
+  <h2 class="section-title">KPIs<br>Mois 1</h2>
+
+  <div class="kpi-row">
+    <div class="kpi-cell">
+      <span class="kpi-num">+30</span>
+      <span class="kpi-label">Posts publiés</span>
+    </div>
+    <div class="kpi-cell">
+      <span class="kpi-num">+5K</span>
+      <span class="kpi-label">Nouveaux abonnés</span>
+    </div>
+    <div class="kpi-cell">
+      <span class="kpi-num">8%</span>
+      <span class="kpi-label">Taux d'engagement cible</span>
+    </div>
+    <div class="kpi-cell">
+      <span class="kpi-num">6</span>
+      <span class="kpi-label">Reels produits</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  <div class="footer-logo">Grandiose</div>
+  <div class="footer-sub">Paris · Gastronomie · Excellence</div>
+  <div class="footer-line"></div>
+  <div class="footer-note">Proposition stratégique Instagram · Confidentiel · 2025</div>
+</div>
+
+</body>
+</html>
